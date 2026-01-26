@@ -22,7 +22,7 @@ print("\nShape:\n", inputs.shape)
 #print(second_batch)
 
 
-#Positional embedding
+#embedding layer for token embedding
 vocab_size = 50257
 output_dim = 256
 
