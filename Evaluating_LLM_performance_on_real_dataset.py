@@ -229,17 +229,3 @@ train_model_simple(
 end_time = time.time()
 execution_time_minutes = (end_time - start_time) / 60
 print(f"Training completed in {execution_time_minutes:.2f} minutes.")
-
-def plot_losses(epochs_seen, tokens_seen, train_losses, val_losses):
-    fig, ax1 = plt.subplots(figsize=(5, 3))
-
-    # Plot training and validation loss against epochs
-    ax1.plot(epochs_seen, train_losses, label="Training Loss")
-    ax1.plot(epochs_seen, val_losses, linestyle="-.", label="Validation Loss")
-    ax1.set_xlabel("Epochs")
-    ax1.set_ylabel("Loss")
-    ax1.legend(loc="upper right")
-    ax1.xaxis.set_major_locator(MaxNLocator(integer=True)) # only
-
-    epochs_tensor = torch.tensor(0, num_epochs, len(train_losses))
-    plot_losses(epochs_tensor, tokens_seen, train_losses, val_losses)
